@@ -1,0 +1,42 @@
+{
+  "name": "guru-api",
+  "version": "1.0.0",
+  "description": "api for guru",
+  "main": "build/app.js",
+  "scripts": {
+    "start": "npm run build && node -r dotenv/config build/app.js",
+    "watch": "babel -w src/ -d build/",
+    "build": "babel src/ -d build/",
+    "serve": "babel -w src/ -d build/ | nodemon --watch build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinop/guru-api.git"
+  },
+  "author": "SEND Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinop/guru-api/issues"
+  },
+  "homepage": "https://github.com/martinop/guru-api#README",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "formidable": "^1.2.1",
+    "morgan": "^1.9.0",
+    "pg-promise": "^8.4.0",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "nodemon": "^1.11.0"
+  }
+}
