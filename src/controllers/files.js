@@ -18,7 +18,6 @@ const post = (req, res) => {
                     obj.done()           
                 })
                 .catch((error) => {
-                    console.log(error)
                     res.send({ status: 500, error })
                     obj.done()    
                 })
