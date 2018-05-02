@@ -14,7 +14,14 @@ const post = (req, res) => {
         db.connect().then((obj) => {
             obj.one('INSERT INTO files(id_user, id_subject, path, created_at, description) VALUES($1, $2, $3, $4, $5) RETURNING id_file', [id_user, id_subject, files.file.path, new Date(), description ])
                 .then((data) => {
-                    res.send({ status: 200, message: 'File created', data })
+                    res.send({ status: 200, message: 'File created', data: {
+                        id_file: data.id_file,
+                        id_user, 
+                        id_subject, 
+                        path: files.file.path,
+                        created_at: new Date(), 
+                        description
+                    } })
                     obj.done()           
                 })
                 .catch((error) => {
